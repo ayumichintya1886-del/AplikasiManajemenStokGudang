@@ -1,11 +1,14 @@
 <?php
 use Illuminate\Support\Facades\Route; 
-use App\Http\Controllers\HomeController; 
+// use App\Http\Controllers\HomeController; 
 use App\Http\Controllers\ListBarangController;
+use App\Http\Controllers\BarangController;
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/barang', [BarangController::class, 'tampilkan']);
 
 Route::get('/user/{id}', function ($id) {
     return 'User ID : ' . $id;
